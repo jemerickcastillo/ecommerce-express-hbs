@@ -1,0 +1,23 @@
+{
+  "name": "proyectofinal",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "mongo:start": "docker run --rm -p=27017:27017 --env-file=./.env --name=proyecto--final--mongo -d centos/mongodb-32-centos7",
+    "mongo:stop": "docker stop proyecto--final--mongo",
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "express-handlebars": "^5.0.0",
+    "hbs": "~4.0.4",
+    "http-errors": "~1.6.3",
+    "mongoose": "^5.9.21",
+    "morgan": "~1.9.1",
+    "node-sass-middleware": "0.11.0",
+    "nodemon": "^2.0.4"
+  }
+}

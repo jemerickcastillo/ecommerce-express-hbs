@@ -1,0 +1,182 @@
+#topbar{
+    background: #FDA7C2;
+    padding: 5px 0;
+    border-bottom: none;
+
+    .contact-info a {
+        color: white;
+        font-family: 'Poppins', sans-serif;
+        &:hover {
+            color: white;
+        }  
+    }
+    .contact-info i {
+        color: white;
+    }
+
+    .social-links a {
+        color: white;
+        padding: 0px 12px;
+        font-size: 16px;
+    }
+} 
+
+.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+    color: #fda7c2;
+}
+
+.nav-menu a {
+    color: black;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;  
+    font-weight: 500;
+    
+}
+
+#hero{
+    h2 {
+        color: #fff;
+        font-size: 48px;
+        font-weight: 400;
+        font-family: "Open Sans";
+    }
+    p{
+        color: #fff;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 26px;
+        font-family: 'Poppins', sans-serif;  
+    }
+
+    .btn-get-started {
+        font-family: 'Poppins', sans-serif; 
+        font-weight: 500;
+        font-size: 14px;
+        padding: 12px 32px;
+        border-radius: 0px;
+        margin: 0px;
+        margin-top: 10px;
+        color: #fff;
+        background: transparent;
+        border: 1px solid white;
+    }
+    //opacity
+    .carousel-item::before {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+
+#colections{
+    padding-bottom: 60px;
+    .colection-info{
+        h4 {
+            position: absolute;
+            bottom: 30px;
+            left: 15px;
+            background-color: pink;
+            padding: 12px 20px;
+            color: white;
+        }
+    } 
+}
+.calltoaction-bg {
+    background-image: url(/images/home/calltoactionbg.jpg);
+    height: auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    .call-content{
+        padding-bottom: 60px;
+        h2{
+            text-align: center;
+            color: white;
+            margin: 0 auto;
+            font-family: 'Oswald', sans-serif;
+            letter-spacing: 5px;
+            font-weight: 300;
+            font-size: 46px;
+        }
+        p{
+            text-align: center;
+            color: white;
+            margin: 0 auto;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;  
+            width: 640px;
+            margin-top: 30px;
+        }
+        .btn-call-to{
+            text-align: center;
+            margin: 0 auto;
+            margin-top: 30px;
+            a{
+                color: white;
+                border: 1px solid;
+                padding: 8px 20px;
+            }
+        }
+    }
+}
+
+
+
+
+#footer {
+    background: #F2F2F2;
+    padding: 0 0 15px 0;
+    .footer-top {
+        background: #FDA7C2;
+        border: none;
+       .social-links a {
+            background: transparent;
+            color: #fff;
+            padding: 8px 0;
+            text-align: left;
+        }
+    }
+    .footer-links{
+        h4{
+            font-family: 'Poppins', sans-serif;  
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            &::before{  
+                content: '|';
+                padding-right:10px;
+            }
+        }
+        ul{
+            li{
+                i{
+                    &::before{
+                        display: none;
+                    }
+                }
+            }
+        }
+        i{
+            display: table-cell;
+            vertical-align: middle;
+        }
+        span{
+            display: table-cell;
+            vertical-align: middle;
+            padding-left: 10px;
+        } 
+    }
+
+    .copyright{
+        text-align: left;
+        padding-top: 15px;
+        span{
+            color: black;
+            font-family: 'Poppins', sans-serif;  
+            font-size: 14px;
+            font-weight: 300;
+        }
+    }
+}
+
+.back-to-top {
+    background: #ffc0cb;
+}
