@@ -11,6 +11,8 @@ const connectDb = require('./dbConfig');
 
 var indexRouter = require('./routes/index');
 var aboutRouter = require('./routes/aboutus');
+var contactRouter = require('./routes/contactus');
+var loginRouter = require('./routes/login');
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -34,6 +36,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/',aboutRouter);
+app.use('/', contactRouter);
+app.use('/', loginRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

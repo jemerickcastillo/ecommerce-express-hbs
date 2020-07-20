@@ -10,7 +10,12 @@ var router = express.Router();
 // });
 
 router.get('/aboutus', function(req, res, ) {
-  res.render('about'); 
+  res.render('about',{
+    title:'Sobre Nosotros',
+    breadcumb1:'Inicio'
+    
+
+  }); 
 });
 
 module.exports = router;

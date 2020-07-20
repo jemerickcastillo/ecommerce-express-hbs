@@ -3,16 +3,62 @@
     <div class="container">
 
       <div class="logo float-left">
-        <h1 class="text-light"><a href="index.html"><span>Mamba</span></a></h1>
+        <h1 class="text-light"><a href="/"><span>Vielyck's Details</span></a></h1>
        </div>
 
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
           <li class="active"><a href="/">INICIO</a></li>
           <li><a href="/aboutus">SOBRE NOSOTROS</a></li>
-          <li><a href="#">SERVICIOS</a></li>
           <li><a href="#">PRODUCTOS</a></li>
-          <li><a href="#">CONTÁCTENOS</a></li>
+          <li><a href="/contact-us">CONTÁCTENOS</a></li>
+            <li class="dropdown cart-dropdown">
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-shopping-cart"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-right" style="">
+                      <li>Productos en el carrito</li>
+                      <li>
+                        <a href="single-product.html">
+                          <div class="media">
+                            <img class="media-left media-object" src="images/cart-item-01.jpg" alt="cart-Image">
+                            <div class="media-body">
+                              <h5 class="media-heading">INCIDIDUNT UT <br><span>2 X $199</span></h5>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <a href="single-product.html">
+                          <div class="media">
+                            <img class="media-left media-object" src="images/cart-item-01.jpg" alt="cart-Image">
+                            <div class="media-body">
+                              <h5 class="media-heading">INCIDIDUNT UT <br><span>2 X $199</span></h5>
+                            </div>
+                          </div>
+                        </a>
+                      </li>
+                      <li>
+                        <div class="btn-group" role="group" aria-label="...">
+                          <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';">Shopping Cart</button>
+                          <button type="button" class="btn btn-default" onclick="location.href='checkout-step-1.html';">Checkout</button>
+                        </div>
+                      </li>
+                    </ul>
+              </li>
+           <li class="searchBox">
+                    <a href="#"><i class="fa fa-search"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-right">
+                      <li>
+                        <span class="input-group">
+                          <input type="text" class="form-control" placeholder="Search…" aria-describedby="basic-addon2">
+                          <button type="submit" class="input-group-addon">Submit</button>
+                        </span>
+                      </li>
+                    </ul>
+            </li>
+           
+               <li class="login">
+                    <a href="/login"><i class="fa fa-user"></i></a> 
+              </li>
         </ul>
       </nav>
 

@@ -134,4 +134,244 @@
 .back-to-top {
   background: #ffc0cb; }
 
+/* Internal Page */
+.lightSection {
+  background-color: #f0f0f0; }
+
+.pageHeader {
+  height: 70px;
+  padding: 0; }
+  .pageHeader ol.breadcrumb {
+    background-color: transparent;
+    margin-bottom: 0;
+    padding: 0;
+    display: block;
+    float: right !important;
+    min-height: 70px; }
+    .pageHeader ol.breadcrumb li {
+      display: inline-block; }
+      .pageHeader ol.breadcrumb li a {
+        text-transform: uppercase;
+        color: #969696;
+        transition: all .3s ease-in-out;
+        font-size: 12px;
+        line-height: 70px; }
+    .pageHeader ol.breadcrumb .active {
+      color: #252525;
+      text-transform: uppercase;
+      font-size: 12px; }
+  .pageHeader .page-title h2 {
+    color: #797979;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 0;
+    font-size: 30px;
+    line-height: 70px; }
+
+.pageHeader ol.breadcrumb li + li::before {
+  color: #ccc;
+  content: "/\00a0"; }
+
+.team .member .member-info {
+  background: linear-gradient(0deg, #fae6e8 0%, #fda7c2 35%); }
+
+.top-right .cart-dropdown ul.dropdown-menu, .cart-dropdown ul.dropdown-menu {
+  background-color: #FDA7C2;
+  border-radius: 0;
+  margin: 0;
+  box-shadow: none;
+  border: 0;
+  z-index: 9999; }
+
+.top-right .cart-dropdown ul.dropdown-menu li:first-child, .cart-dropdown ul.dropdown-menu li:first-child {
+  color: #fff;
+  padding: 10px 0 8px 19px; }
+
+.top-right .cart-dropdown ul.dropdown-menu li .btn-group .btn, .cart-dropdown ul.dropdown-menu li .btn-group .btn {
+  border: 0;
+  height: 36px;
+  padding: 0;
+  line-height: 36px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 4px !important;
+  color: #252525;
+  background-color: #f8f8f8;
+  transition: all .3s ease-in-out; }
+
+.top-right .cart-dropdown ul.dropdown-menu li a .media, .cart-dropdown ul.dropdown-menu li a .media {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 12px 0; }
+
+.top-right .cart-dropdown ul.dropdown-menu li a .media .media-body h5, .cart-dropdown ul.dropdown-menu li a .media .media-body h5 {
+  color: #fff;
+  line-height: 20px;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 700; }
+
+.top-right .cart-dropdown ul.dropdown-menu, .cart-dropdown ul.dropdown-menu {
+  width: auto; }
+
+.media-left, .media > .pull-left {
+  float: left;
+  padding-right: 10px; }
+
+.top-right .cart-dropdown ul.dropdown-menu li .btn-group, .cart-dropdown ul.dropdown-menu li .btn-group {
+  padding: 14px 19px; }
+
+.top-right .cart-dropdown ul.dropdown-menu li .btn-group button:first-child, .cart-dropdown ul.dropdown-menu li .btn-group button:first-child {
+  width: 149px; }
+
+.top-right .cart-dropdown ul.dropdown-menu li .btn-group .btn, .cart-dropdown ul.dropdown-menu li .btn-group .btn {
+  border: 0;
+  height: 36px;
+  padding: 0;
+  line-height: 36px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 4px !important;
+  color: #252525;
+  background-color: #f8f8f8;
+  transition: all .3s ease-in-out; }
+
+.top-right .cart-dropdown ul.dropdown-menu li .btn-group button:last-child, .cart-dropdown ul.dropdown-menu li .btn-group button:last-child {
+  margin-left: 8px; }
+
+.btn-group {
+  margin-right: 10px; }
+
+.btn-group, .btn-group-vertical {
+  position: relative;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle; }
+
+.display-block {
+  display: block; }
+
+.dropdown-menu {
+  padding: .5rem 0; }
+
+.searchBox .input-group .form-control {
+  box-shadow: none;
+  border-radius: 0;
+  height: 34px;
+  line-height: 34px; }
+
+.searchBox .dropdown-menu {
+  width: 350px;
+  margin: 0;
+  padding: 10px 15px;
+  border-radius: 0;
+  right: 0;
+  left: auto; }
+
+input.form-control, textarea.form-control, select.form-control {
+  border-radius: 0;
+  font-size: 14px;
+  padding: 13px 20px;
+  line-height: 24px;
+  border: 1px solid #f0f0f0;
+  background-color: #f0f0f0;
+  margin-bottom: 30px;
+  font-weight: 300; }
+
+.searchBox .input-group .input-group-addon {
+  border-radius: 0;
+  background-color: #FDA7C2;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  border-color: #FDA7C2;
+  width: auto;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9;
+  height: 34px; }
+
+.input-group-addon {
+  border-radius: 0;
+  background: #FDA7C2;
+  background-color: #f0f0f0;
+  padding-left: 17px;
+  padding-right: 17px;
+  border: 1px solid #e5e5e5;
+  border-top-color: #e5e5e5;
+  border-right-color: #e5e5e5;
+  border-bottom-color: #e5e5e5;
+  border-left-color: #e5e5e5;
+  font-size: 16px;
+  color: #797979; }
+
+.contact .php-email-form button[type="submit"] {
+  background: #fda7c2;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s; }
+
+.contact .info-box i {
+  font-size: 32px;
+  color: #fda7c2;
+  border-radius: 50%;
+  padding: 8px;
+  border: 2px dotted #fda7c2; }
+
+#login-page {
+  padding: 80px 0px; }
+  #login-page .login-box {
+    border: 1px solid #eaeaea;
+    min-height: 390px;
+    padding: 20px;
+    background: #fff;
+    margin-bottom: 10px; }
+  #login-page h1, #login-page h2, #login-page h3 {
+    font-family: "Raleway", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #666;
+    margin: 0px 0px 30px;
+    line-height: 40px;
+    border-bottom: 1px solid #eaeaea; }
+
+#login-page .register-box {
+  border: 1px solid #eaeaea;
+  min-height: 390px;
+  padding: 20px;
+  background: #fff; }
+
+#login-page .login-box .label-login {
+  display: block;
+  line-height: 22px;
+  margin: 0px 0px 5px;
+  font-weight: 400; }
+
+#login-page .login-box .lost_password {
+  margin: 0px 0px 10px;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic; }
+
+.btn.btn-outline {
+  padding: 10px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: normal; }
+
+.btn-outline {
+  color: #fff;
+  background-color: #FDA7C2;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease; }
+
+#RecoverPassword {
+  color: black; }
+
 /*# sourceMappingURL=style.css.map */

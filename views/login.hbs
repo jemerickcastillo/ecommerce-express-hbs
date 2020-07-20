@@ -1,0 +1,72 @@
+{{> header_internal }}
+<div id="login-page" class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="login-box">
+                <div class="note form-success" id="ResetSuccess" style="display:none;">
+                    Hemos enviado un correo electrónico con un enlace para actualizar su contraseña.
+                </div>
+                <div id="CustomerLoginForm">
+                    <form method="post" action="/account/login" id="customer_login" accept-charset="UTF-8"><input type="hidden" name="form_type" value="customer_login"><input type="hidden" name="utf8" value="✓">
+                        <h1>Ingresar</h1>
+                        
+                        <label for="CustomerEmail" class="label-login">Correo electrónico</label>
+                        <input type="email" name="customer[email]" id="CustomerEmail" placeholder="Correo electrónico" class="account_input form-control " autocorrect="off" autocapitalize="off" autofocus="" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="off">
+                        
+                            <label for="CustomerPassword" class="label-login">Contraseña</label>
+                            <input type="password" value="" name="customer[password]" id="CustomerPassword" placeholder="Contraseña" class="password_input form-control " style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAPhJREFUOBHlU70KgzAQPlMhEvoQTg6OPoOjT+JWOnRqkUKHgqWP4OQbOPokTk6OTkVULNSLVc62oJmbIdzd95NcuGjX2/3YVI/Ts+t0WLE2ut5xsQ0O+90F6UxFjAI8qNcEGONia08e6MNONYwCS7EQAizLmtGUDEzTBNd1fxsYhjEBnHPQNG3KKTYV34F8ec/zwHEciOMYyrIE3/ehKAqIoggo9inGXKmFXwbyBkmSQJqmUNe15IRhCG3byphitm1/eUzDM4qR0TTNjEixGdAnSi3keS5vSk2UDKqqgizLqB4YzvassiKhGtZ/jDMtLOnHz7TE+yf8BaDZXA509yeBAAAAAElFTkSuQmCC&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;" autocomplete="off">
+                            <p class="lost_password form-group">
+                                <a href="#recover" id="RecoverPassword">¿Olvidó su contraseña?</a>
+                            </p>
+                        
+                        <p>
+                            <button type="submit" id="SubmitLogin" name="SubmitLogin" class="btn btn-outline">
+                                <span>
+                                    <i class="fa fa-lock"></i>&nbsp;
+                                    Ingresar
+                                </span>
+                            </button>
+                        </p>
+                        <!-- <a href="https://panamacoffeeclub.com">Volver a la tienda</a> -->
+                    </form>
+                </div>
+                <div id="RecoverPasswordForm" style="display: none;">
+                    <h2>Restablecer su contraseña</h2>
+                    <p>Le enviaremos un correo electrónico para restablecer su contraseña.</p>
+                    <form method="post" action="/account/recover" accept-charset="UTF-8"><input type="hidden" name="form_type" value="recover_customer_password"><input type="hidden" name="utf8" value="✓">
+                        
+                        
+                        <label for="RecoverEmail" class="label-login">Correo electrónico</label>
+                        <input type="email" value="" name="email" id="RecoverEmail" class="form-control" placeholder="Correo electrónico" autocorrect="off" autocapitalize="off">
+                        <p>
+                            <input type="submit" class="btn btn-outline" value="Enviar">
+                        </p>
+                        <button type="button" id="HideRecoverPasswordLink" class="text-link btn btn-outline-inverse">
+                            <span>
+                                <i class="fa fa-long-arrow-left"></i>&nbsp;
+                                Cancelar
+                            </span>
+                        </button>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="register-box">
+                <h3>Crear cuenta</h3>
+                <div class="register_des">
+                    <p>Al crear una cuenta en nuestro sitio web, podrá comprar más rápido, estar al día sobre el estado de los pedidos y realizar un seguimiento de los pedidos que haya realizado anteriormente.</p>
+                </div>
+                <div class="submit">
+                    <a class="btn btn-outline exclusive" href="/account/register">
+                        <span>
+                            <i class="fa fa-user"></i>&nbsp;
+                            Crear
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
