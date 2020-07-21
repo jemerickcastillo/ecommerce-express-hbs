@@ -1,26 +1,47 @@
 require('dotenv').config()
 var createError = require('http-errors');
 var express = require('express');
-var exphbs  = require('express-handlebars');
+var hbs  = require('express-handlebars');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var sassMiddleware = require('node-sass-middleware');
 
-const connectDb = require('./dbConfig');
+const Handlebars = require('handlebars')
+const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
+// Routes
 var indexRouter = require('./routes/index');
-var aboutRouter = require('./routes/aboutus');
-var contactRouter = require('./routes/contactus');
-var loginRouter = require('./routes/login');
 var usersRouter = require('./routes/users');
+// DB connection
+const mongoose = require('mongoose');
+
+const MONGO_URL = `mongodb://${process.env.MONGODB_SERVER || 'localhost'}:${process.env.MONGODB_PORT}/${process.env.MONGODB_DATABASE}`;
+
+const mongoOptions = {
+  user: process.env.MONGODB_USER,
+  pass: process.env.MONGODB_PASSWORD,
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+};
 
 var app = express();
 
+mongoose.connect(MONGO_URL, mongoOptions);
 // view engine setup
-app.engine('hbs', exphbs({ extname: 'hbs', defaultLayout: 'main'}));
+app.engine('hbs', hbs(
+  {extname: 'hbs',
+   defaultLayout: 'main',
+   partialsDir:__dirname + '/views/partials',
+   layoutsDir: __dirname + '/views/layouts',
+   handlebars: allowInsecurePrototypeAccess(Handlebars)
+  }
+   )
+);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+// app.set('view options', { layout: 'admin' });
+// view engine setup
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -35,9 +56,6 @@ app.use(sassMiddleware({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/',aboutRouter);
-app.use('/', contactRouter);
-app.use('/', loginRouter);
 app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler

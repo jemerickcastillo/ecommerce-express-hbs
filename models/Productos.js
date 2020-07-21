@@ -7,7 +7,8 @@ var productos = new Schema({
     title: {type: String, required: true},
     description: { type: String, required: true },
     price: {type: Number, required: true},
-    model: {type: String, required: true}
+    model: {type: String, required: true},
+    destacado: {type: Boolean}
 });
 
 const Productos = mongoose.model('Productos', productos);
