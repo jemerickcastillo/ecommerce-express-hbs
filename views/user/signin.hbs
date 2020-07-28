@@ -1,0 +1,57 @@
+{{> header_internal }}
+<div id="login-page" class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="login-box">
+                <div class="note form-success" id="ResetSuccess" style="display:none;">
+                    Hemos enviado un correo electrónico con un enlace para actualizar su contraseña.
+                </div>
+                <div id="CustomerLoginForm">
+                    <h1>Ingresar</h1>
+                        {{#if hasErrors }}
+                            <div class="alert alert-danger">
+                                {{#each messages}}
+                                    <p>{{this}}</p>
+                                {{/each}}
+                            </div>
+                        {{/if}}
+                    <form method="post" action="/user/signin" id="customer_login">
+      
+                        <label for="CustomerEmail" class="label-login">Correo electrónico</label>
+                        <input type="text" id="email" name="email" class="form-control" value="jem@prueba.com">
+                            <label for="CustomerPassword" class="label-login">Contraseña</label>
+                            <input type="password" id="password" name="password" class="form-control" value="123456789">
+                        <p>
+                            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                            <button type="submit" id="SubmitLogin" name="SubmitLogin" class="btn btn-outline">
+                                <span>
+                                    <i class="fa fa-lock"></i>&nbsp;
+                                    Ingresar
+                                </span>
+                            </button>
+                        </p>
+                      
+                    </form>
+                </div>
+     
+
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="register-box">
+                <h3>Crear cuenta</h3>
+                <div class="register_des">
+                    <p>Al crear una cuenta en nuestro sitio web, podrá comprar más rápido, estar al día sobre el estado de los pedidos y realizar un seguimiento de los pedidos que haya realizado anteriormente.</p>
+                </div>
+                <div class="submit">
+                    <a class="btn btn-outline exclusive" href="/user/signup">
+                        <span>
+                            <i class="fa fa-user"></i>&nbsp;
+                            Crear
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

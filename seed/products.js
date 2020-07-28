@@ -14,26 +14,74 @@ connectDb().then(() => {
 var products =[
     new Product({
         imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
-        title: 'Thicc Body',
+        title: 'Lorem ipsum dolor at simet',
         description: 'Just for thicc people',
-        price: 10,
+        price: 34.99,
         destacado: true,
         model: 'T-shirt'
     }),
     new Product({
         imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
-        title: 'EXTRA TICC',
+        title: 'Lorem ipsum dolor at simet',
         description: 'Just for thicc people',
-        price: 25,
+        price: 28.99,
         destacado: false,
         model: 'T-shirt'
     }),
     new Product({
         imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
-        title: 'Simple like this',
+        title: 'Lorem ipsum dolor at simet',
         description: 'Just for thicc people',
         destacado: false,
-        price: 19,
+        price: 28.99,
+        model: 'T-shirt'
+    }),
+    new Product({
+        imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
+        title: 'Lorem ipsum dolor at simet',
+        description: 'Just for thicc people',
+        price: 28.99,
+        destacado: false,
+        model: 'T-shirt'
+    }),
+    new Product({
+        imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
+        title: 'Lorem ipsum dolor at simet',
+        description: 'Just for thicc people',
+        price: 34.99,
+        destacado: true,
+        model: 'T-shirt'
+    }),
+    new Product({
+        imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
+        title: 'Lorem ipsum dolor at simet',
+        description: 'Just for thicc people',
+        price: 28.99,
+        destacado: false,
+        model: 'T-shirt'
+    }),
+    new Product({
+        imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
+        title: 'Lorem ipsum dolor at simet',
+        description: 'Just for thicc people',
+        destacado: false,
+        price: 28.99,
+        model: 'T-shirt'
+    }),
+    new Product({
+        imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
+        title: 'Lorem ipsum dolor at simet',
+        description: 'Just for thicc people',
+        price: 28.99,
+        destacado: false,
+        model: 'T-shirt'
+    }),
+    new Product({
+        imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
+        title: 'Lorem ipsum dolor at simet',
+        description: 'Just for thicc people',
+        price: 28.99,
+        destacado: false,
         model: 'T-shirt'
     })
 ];

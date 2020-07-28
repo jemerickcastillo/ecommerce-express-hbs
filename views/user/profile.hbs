@@ -1,0 +1,29 @@
+{{> header_internal }}
+{{#each data}}
+<div class="container space-up-down">
+    <div class="row">
+        <div class="col-lg-12">
+             <h1>Datos de Usuario</h1>
+             <hr>
+        </div>
+       
+        <div class="col-lg-12">
+                <h3>Nombre: {{name}} {{lname}}</h3>
+        </div>
+        <div class="col-lg-12">
+
+        <h3>Correo electrónico: {{email}} </h3>
+        </div>
+        <div class="col-lg-12">
+            
+        <h3>Dirección: {{address}}</h3>
+        </div>
+        <div class="col-lg-12">
+            
+        <h3>Teléfono: {{phone}}</h3>
+        </div>
+
+    </div>
+</div>
+
+{{/each}}  

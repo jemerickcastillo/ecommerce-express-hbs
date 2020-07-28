@@ -3,7 +3,7 @@
     <div class="container">
 
       <div class="logo float-left">
-        <h1 class="text-light"><a href="/"><span>Vielyck's Details</span></a></h1>
+        <h1 class="text-light"><a href="/"><img src="/images/logo.png" /></a></h1>
        </div>
 
       <nav class="nav-menu float-right d-none d-lg-block">
@@ -18,25 +18,25 @@
                       <li>Productos en el carrito</li>
                       {{#each carrito}}
                       <li>
-                        <a href="single-product.html">
+                        <a >
                           <div class="media">
-                            <img class="media-left media-object" src="images/cart-item-01.jpg" alt="cart-Image">
+                            <img class="media-left media-object" src="{{imagePath}}" alt="cart-Image">
                             <div class="media-body">
-                              <h5 class="media-heading">{{title}} <br><span>2 X $199</span></h5>
+                              <h5 class="media-heading">{{title}} <br><span>${{price}}</span></h5>
                             </div>
                           </div>
-                        </a>
+                          </a>
                       </li>
                       {{/each}}                      
                       <li>
                         <div class="btn-group" role="group" aria-label="...">
-                          <button type="button" class="btn btn-default" onclick="location.href='cart-page.html';">Shopping Cart</button>
-                          <button type="button" class="btn btn-default" onclick="location.href='checkout-step-1.html';">Checkout</button>
+                          <button type="button" class="btn btn-default" onclick="location.href='/shopping_cart';">Shopping Cart</button>
+                          <button type="button" class="btn btn-default" onclick="location.href='/user/checkout';">Checkout</button>
                         </div>
                       </li>
                     </ul>
               </li>
-           <li class="searchBox">
+           {{!-- <li class="searchBox">
                     <a href="#"><i class="fa fa-search"></i></a>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <li>
@@ -46,10 +46,20 @@
                         </span>
                       </li>
                     </ul>
-            </li>
+            </li> --}}
            
                <li class="login">
-                    <a href="/login"><i class="fa fa-user"></i></a> 
+                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-user"></i></a> 
+                     <ul class="dropdown-menu dropdown-menu-right">
+                      {{#if login}}
+                        <li><a href="/user/profile">Cuenta del Usuario</a></li>
+                        <li><a href="/user/orders">Ordenes</a></li>
+                        <li><a href="/user/logout">Cerrar Sesion</a></li>
+                        {{else}}
+                          <li><a href="/user/signin">Iniciar Sesion</a></li>
+                          <li><a href="/user/signup">Registrarse</a></li>
+                      {{/if}}
+                    </ul>
               </li>
         </ul>
       </nav>

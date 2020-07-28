@@ -3,55 +3,60 @@ var express = require('express');
 var router = express.Router();
 const Productos = require('../models/Productos');
 const Carrito = require('../models/cart');
+const Users = require('../models/user');
 
-
-let cartList
-/* GET home page. */
-router.all('/', async(req, res, next)=>{
-  cartList = await Carrito.find({});
-  next();
-});
+const cartListAsync = async ()=> await Carrito.find({},(eror, result)=>result);
 
 router.get('/', async(req, res)=>{
   const destacados = await Productos.find({ destacado: true});
-  console.log(cartList)
-  res.render('index', {destacados: destacados, carrito: cartList}); 
+  const cartList = await cartListAsync().then((data)=>data);
+  console.log(cartList);
+  res.render('index', {
+    destacados: destacados, 
+    carrito: cartList,
+    title:"Vielyck's Details"
+  }); 
 });
 
-router.get('/aboutus', function(req, res, ) {
+router.get('/aboutus', async (req, res ) =>{
+  const cartList = await cartListAsync().then((data)=>data);
+
   res.render('about',{
     title:'Sobre Nosotros',
-    breadcumb1:'Inicio'
-  
+    breadcumb1:'Inicio',
+    carrito: cartList
   }); 
 });
 
-router.get('/contact-us', function(req, res, ) {
+router.get('/contact-us', async (req, res, )=>{
+  const cartList = await cartListAsync().then((data)=>data);
+
   res.render('contact-us',{
     title:'Contáctenos',
-    breadcumb1:'Inicio'
+    breadcumb1:'Inicio',
+    carrito: cartList
   }); 
 });
 
-
-router.get('/login', function(req, res, ) {
-  res.render('login',{
-    title:'Iniciar Sesión',
-    breadcumb1:'Inicio'
-  }); 
-});
 
 router.get('/products', async (req, res)=>{
+  const cartList = await cartListAsync().then((data)=>data)
   const dataLoaded = await Productos.find({});
-  console.log(dataLoaded);
-  // Productos.find({}, (err, data)=>{
-  //   if(err) console.log(err)
-  //   console.log(data)
-  // });
-  res.render('products', { title: 'Express', data: dataLoaded});
+
+  res.render('products', { 
+    title: 'Productos', 
+    data: dataLoaded,
+    breadcumb1:'Inicio',
+    carrito: cartList
+  });
 });
 
+
+
+
+
 router.get('/add-to-cart/:id', async (req, res)=>{
+  let backURL = req.header('Referer') || '/';
   const idProduct = req.params.id
   const dataLoaded = await Productos.findById(idProduct);
   console.log(dataLoaded.title);
@@ -63,10 +68,47 @@ router.get('/add-to-cart/:id', async (req, res)=>{
 
   nuevoCarrito.save((err, result)=>{
     if(err) console.log(err)
-    res.redirect('/');
+    res.redirect(backURL);
   });
 });
 
+router.get('/delete-to-cart/:id', async (req, res) => {
+  try {
+      await Carrito.findByIdAndRemove(req.params.id)
+      .then((data)=>res.redirect('/shopping_cart'));
+      
+  } catch (error) {
+      res.json(error);
+  }
+});
 
+
+router.get('/product_details/:id', async (req, res) => {
+  const idString = req.params.id;
+  const cartList = await cartListAsync().then((data)=>data);
+  const dataLoaded = await Productos.findById(idString);
+  console.log(dataLoaded);
+  res.render('product_details',{
+    title:dataLoaded.title,
+    breadcumb1:'Inicio',
+    prueba:idString,
+    product: dataLoaded,
+    carrito: cartList
+  }); 
+});
+
+router.get('/shopping_cart', async (req, res)=>{
+  const cartList = await cartListAsync().then((data)=>data)
+  const dataLoaded = await Carrito.find({});
+
+  res.render('shopping_cart', { 
+    title: 'Carrito de Compras', 
+    data: dataLoaded,
+    breadcumb1:'Inicio',
+    carrito: cartList
+  });
+});
 
 module.exports = router;
+
+

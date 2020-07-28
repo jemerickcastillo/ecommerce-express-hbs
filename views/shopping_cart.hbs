@@ -1,0 +1,45 @@
+{{> header_internal }}
+<div class="container carrito-compra">
+          <div class="row">
+            <div class="col-12">
+              <div class="cartListInner">
+                <form action="#">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Nombre</th>
+                          <th>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {{#each data}}
+                        <tr>
+                          <td class="">
+                            <a href="/delete-to-cart/{{_id}}"><span aria-hidden="true">Eliminar</span></a>
+                            <span class="cartImage"><img src="{{imagePath}}" alt="image"></span>
+                          </td>
+                          <td class="">{{title}}</td>
+                          <td class="">${{price}}</td>
+                        </tr>
+                        {{/each}}  
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="row totalAmountArea">
+                    <div class="col-sm-4 ml-sm-auto">
+                      <ul class="list-unstyled">
+                        <li>Total <span class="grandTotal">${{total data}}</span></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="checkBtnArea">
+                      <a href="/user/checkout" class="btn btn-primary btn-default">checkout</a>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>

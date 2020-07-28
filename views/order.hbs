@@ -1,0 +1,25 @@
+{{> header_internal }}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">#ID</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Metodo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each order}}
+                    <tr>
+                        <th scope="row">{{payID}}</th>
+                        <td>{{state}}</td>
+                        <td>{{paymentMethod}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+                </table>
+        </div>
+    </div>
+</div>

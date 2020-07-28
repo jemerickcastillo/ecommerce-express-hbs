@@ -1,0 +1,21 @@
+{{> header_internal }}
+<div class="container">
+    <div class="row singleProduct">
+    
+        <div class="col-md-6">
+            <img  style="width:400px;"  src="{{product.imagePath}}"/>
+        </div>
+         <div class="col-md-6">
+                  <h2>{{product.title}}</h2>
+                  <h3>${{product.price}}</h3>
+                  <p>{{product.description}}</p>
+                  
+                  <div class="btn-area mb-0">
+                    <a href="/add-to-cart/{{product._id}}" class="btn btn-primary btn-default">Add to cart <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                  </div>
+        </div>
+    </div>  
+</div>
+
+
+

@@ -1,0 +1,43 @@
+{{> header_internal }}
+<section class="mainContent clearfix stepsWrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="summery-box">
+                <h4>Order Summery</h4>
+                <p>Excepteur sint occaecat cupidat non proi dent sunt.officia.</p>
+                <ul class="list-unstyled">
+                  <li class="d-flex justify-content-between">
+                    <span class="tag">Nombre completo</span>
+                    <span class="val">{{dataUser.name}} {{dataUser.lname}}</span>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    <span class="tag">Email</span>
+                    <span class="val">{{dataUser.email}}</span>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    <span class="tag">Address</span>
+                    <span class="val">{{dataUser.address}}</span>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    <span class="tag">Subtotal</span>
+                    <span class="val">${{total carrito}}</span>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    <span class="tag">Shipping &amp; Handling</span>
+                    <span class="val">$0.00 - ASAP</span>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    <span class="tag">Total</span>
+                    <span class="val">USD  ${{total carrito}} </span>
+                  </li>
+                </ul>
+                <form action="/user/pay" method="POST">
+                  <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                  <button class="btn btn-primary btn-default float-right" type="submit">Continue <i class="fa fa-angle-right"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
