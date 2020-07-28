@@ -1,5 +1,4 @@
 {{> header_internal }}
-{{#each data}}
 <div class="container space-up-down">
     <div class="row">
         <div class="col-lg-12">
@@ -8,22 +7,20 @@
         </div>
        
         <div class="col-lg-12">
-                <h3>Nombre: {{name}} {{lname}}</h3>
+                <h3>Nombre: {{data.name}} {{data.lname}}</h3>
         </div>
         <div class="col-lg-12">
 
-        <h3>Correo electrónico: {{email}} </h3>
+        <h3>Correo electrónico: {{data.email}} </h3>
         </div>
         <div class="col-lg-12">
             
-        <h3>Dirección: {{address}}</h3>
+        <h3>Dirección: {{data.address}}</h3>
         </div>
         <div class="col-lg-12">
             
-        <h3>Teléfono: {{phone}}</h3>
+        <h3>Teléfono: {{data.phone}}</h3>
         </div>
 
     </div>
 </div>
-
-{{/each}}  

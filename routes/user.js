@@ -7,12 +7,20 @@ var passport = require('passport');
 const Carrito = require('../models/cart');
 const Users = require('../models/user');
 const Order = require('../models/Order');
-const Orders = require('../models/Order');
+const Productos = require('../models/Productos');
 
 var csrfProtection = csrf();
 router.use(csrfProtection);
 
-const cartListAsync = async ()=> await Carrito.find({},(eror, result)=>result);
+const cartListAsync = async ({userLogin})=> {
+  if(userLogin){
+    console.log("1");
+    return await Carrito.find({user: userLogin},(eror, result)=>result)
+  }else{
+    console.log("2");
+    return []
+  }
+};
 
 // Configuracion del paypal
 paypal.configure({
@@ -22,8 +30,9 @@ paypal.configure({
 });
 //end
 router.get('/profile',isLoggedIn,async(req, res,next)=>{
-  const cartList = await cartListAsync().then((data)=>data)
-  const dataLoaded = await Users.find({});
+  const cartList = await cartListAsync({userLogin: req.user}).then((data)=>data)
+  const dataLoaded = await Users.findById(req.user);
+  console.log(dataLoaded);
   res.render('user/profile',{
     title: 'Datos de Usuario', 
     breadcumb1:'Inicio',
@@ -35,7 +44,7 @@ router.get('/profile',isLoggedIn,async(req, res,next)=>{
 router.get('/checkout',isLoggedIn, async(req, res,next)=>{
   const userLogin = req.user ? true:false;
   const dataUser = req.user? req.user : {};
-  const cartList = await cartListAsync().then((data)=>data)
+  const cartList = await cartListAsync({userLogin: req.user}).then((data)=>data)
 
   res.render('checkout',{
     title: 'Checkout', 
@@ -45,9 +54,37 @@ router.get('/checkout',isLoggedIn, async(req, res,next)=>{
     isLoging: userLogin,
     dataUser: dataUser
   });
-})
+});
+router.get('/add-to-cart/:id',isLoggedIn, async (req, res)=>{
+  let backURL = req.header('Referer') || '/';
+  const idProduct = req.params.id
+  const dataLoaded = await Productos.findById(idProduct);
+  console.log(dataLoaded.title);
+
+  const nuevoCarrito = new Carrito;
+  nuevoCarrito.user = req.user
+  nuevoCarrito.title = dataLoaded.title
+  nuevoCarrito.imagePath = dataLoaded.imagePath
+  nuevoCarrito.price = dataLoaded.price
+
+  nuevoCarrito.save((err, result)=>{
+    if(err) console.log(err)
+    res.redirect(backURL);
+  });
+});
+router.get('/shopping_cart',isLoggedIn, async (req, res)=>{
+  const cartList = await cartListAsync({userLogin: req.user}).then((data)=>data)
+  const dataLoaded = await Carrito.find({user: req.user});
+
+  res.render('shopping_cart', { 
+    title: 'Carrito de Compras', 
+    data: dataLoaded,
+    breadcumb1:'Inicio',
+    carrito: cartList
+  });
+});
 router.post('/pay', async(req, res)=>{
-  const cartList = await cartListAsync().then((data)=>data)
+  const cartList = await cartListAsync({userLogin: req.user}).then((data)=>data)
   let items = [];
   let total = 0;
   for(x of cartList){
@@ -98,7 +135,7 @@ router.get('/succeed', async(req, res)=>{
   const payerId = req.query.PayerID;
   const paymentId = req.query.paymentId;
 
-  const cartList = await cartListAsync().then((data)=>data)
+  const cartList = await cartListAsync({userLogin: req.user}).then((data)=>data)
   let total = 0;
   for(x of cartList){
     total = total + x.price;
@@ -119,7 +156,9 @@ router.get('/succeed', async(req, res)=>{
       console.log(error.response);
       throw error;
     }else{
+      console.log(req.user);
       const newOrder = new Order;
+      newOrder.user = req.user
       newOrder.payID = payment.id
       newOrder.paymentMethod = payment.payer.payment_method
       newOrder.state = payment.state
@@ -133,8 +172,8 @@ router.get('/succeed', async(req, res)=>{
 
 })
 router.get('/orders',isLoggedIn, async(req, res)=>{
-  const cartList = await cartListAsync().then((data)=>data)
-  await Order.find({},(eror, result)=>{
+  const cartList = await cartListAsync({userLogin: req.user}).then((data)=>data)
+  await Order.find({user: req.user},(eror, result)=>{
     res.render('order', {order: result, carrito: cartList})
   })
 });
@@ -153,7 +192,7 @@ router.use('/',notLoggedIn,function(req,res,next){
 
 router.get('/signup', async (req, res,next)=>{
   var messages = req.flash('error');
-  const cartList = await cartListAsync().then((data)=>data)
+  const cartList = await cartListAsync({userLogin: req.user}).then((data)=>data)
   res.render('user/signup', { 
     csrfToken:req.csrfToken(),
     title: 'Registro de Usuario', 
@@ -178,7 +217,7 @@ router.post('/signup', passport.authenticate('local.signup',{
 
 router.get('/signin',async(req, res,next)=>{
   var messages = req.flash('error');
-  const cartList = await cartListAsync().then((data)=>data)
+  const cartList = await cartListAsync({userLogin: req.user}).then((data)=>data)
   res.render('user/signin',{
     csrfToken:req.csrfToken(),
     title: 'Iniciar Sesion', 
