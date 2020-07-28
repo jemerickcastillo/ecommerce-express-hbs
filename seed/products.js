@@ -18,30 +18,9 @@ var products =[
         description: 'Just for thicc people',
         price: 34.99,
         destacado: true,
-        model: 'T-shirt'
-    }),
-    new Product({
-        imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
-        title: 'Lorem ipsum dolor at simet',
-        description: 'Just for thicc people',
-        price: 28.99,
-        destacado: false,
-        model: 'T-shirt'
-    }),
-    new Product({
-        imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
-        title: 'Lorem ipsum dolor at simet',
-        description: 'Just for thicc people',
-        destacado: false,
-        price: 28.99,
-        model: 'T-shirt'
-    }),
-    new Product({
-        imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
-        title: 'Lorem ipsum dolor at simet',
-        description: 'Just for thicc people',
-        price: 28.99,
-        destacado: false,
+        bodas:true,
+        manualidades:false,
+        accesorios:false,
         model: 'T-shirt'
     }),
     new Product({
@@ -50,38 +29,97 @@ var products =[
         description: 'Just for thicc people',
         price: 34.99,
         destacado: true,
+        bodas:true,
+        manualidades:true,
+        accesorios:false,
         model: 'T-shirt'
     }),
     new Product({
         imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
         title: 'Lorem ipsum dolor at simet',
         description: 'Just for thicc people',
-        price: 28.99,
-        destacado: false,
+        price: 34.99,
+        destacado: true,
+        bodas:true,
+        manualidades:true,
+        accesorios:false,
         model: 'T-shirt'
     }),
     new Product({
         imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
         title: 'Lorem ipsum dolor at simet',
         description: 'Just for thicc people',
+        price: 34.99,
         destacado: false,
-        price: 28.99,
+        bodas:true,
+        manualidades:true,
+        accesorios:false,
         model: 'T-shirt'
     }),
     new Product({
         imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
         title: 'Lorem ipsum dolor at simet',
         description: 'Just for thicc people',
-        price: 28.99,
+        price: 34.99,
         destacado: false,
+        bodas:true,
+        manualidades:false,
+        accesorios:true,
         model: 'T-shirt'
     }),
     new Product({
         imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
         title: 'Lorem ipsum dolor at simet',
         description: 'Just for thicc people',
-        price: 28.99,
+        price: 34.99,
         destacado: false,
+        bodas:true,
+        manualidades:false,
+        accesorios:true,
+        model: 'T-shirt'
+    }),
+    new Product({
+        imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
+        title: 'Lorem ipsum dolor at simet',
+        description: 'Just for thicc people',
+        price: 34.99,
+        destacado: false,
+        bodas:false,
+        manualidades:false,
+        accesorios:true,
+        model: 'T-shirt'
+    }),
+    new Product({
+        imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
+        title: 'Lorem ipsum dolor at simet',
+        description: 'Just for thicc people',
+        price: 34.99,
+        destacado: false,
+        bodas:true,
+        manualidades:false,
+        accesorios:true,
+        model: 'T-shirt'
+    }),
+    new Product({
+        imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
+        title: 'Lorem ipsum dolor at simet',
+        description: 'Just for thicc people',
+        price: 34.99,
+        destacado: false,
+        bodas:true,
+        manualidades:false,
+        accesorios:false,
+        model: 'T-shirt'
+    }),
+    new Product({
+        imagePath: 'http://via.placeholder.com/1024x576?placeholder=Dummy',
+        title: 'Lorem ipsum dolor at simet',
+        description: 'Just for thicc people',
+        price: 34.99,
+        destacado: false,
+        bodas:true,
+        manualidades:false,
+        accesorios:false,
         model: 'T-shirt'
     })
 ];

@@ -8,7 +8,10 @@ var productos = new Schema({
     description: { type: String, required: true },
     price: {type: Number, required: true},
     model: {type: String, required: true},
-    destacado: {type: Boolean}
+    destacado: {type: Boolean},
+    bodas: {type: Boolean},
+    manualidades: {type: Boolean},
+    accesorios: {type: Boolean}
 });
 
 const Productos = mongoose.model('Productos', productos);

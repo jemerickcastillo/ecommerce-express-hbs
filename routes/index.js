@@ -51,6 +51,48 @@ router.get('/products', async (req, res)=>{
   });
 });
 
+router.get('/bodas', async (req, res)=>{
+  const cartList = await cartListAsync().then((data)=>data)
+  const bodas = await Productos.find({ bodas: true});
+  const dataLoaded = await Productos.find({});
+
+  res.render('bodas', { 
+    title: 'Bodas', 
+    data: dataLoaded,
+    bodas: bodas, 
+    breadcumb1:'Inicio',
+    carrito: cartList
+  });
+});
+
+router.get('/manualidades', async (req, res)=>{
+  const cartList = await cartListAsync().then((data)=>data)
+  const manualidades = await Productos.find({ manualidades: true});
+  const dataLoaded = await Productos.find({});
+
+  res.render('manualidades', { 
+    title: 'Manualidades', 
+    data: dataLoaded,
+    manualidades: manualidades, 
+    breadcumb1:'Inicio',
+    carrito: cartList
+  });
+});
+
+router.get('/accesorios', async (req, res)=>{
+  const cartList = await cartListAsync().then((data)=>data)
+  const accesorios = await Productos.find({ accesorios: true});
+  const dataLoaded = await Productos.find({});
+
+  res.render('accesorios', { 
+    title: 'Accesorios', 
+    data: dataLoaded,
+    accesorios: accesorios, 
+    breadcumb1:'Inicio',
+    carrito: cartList
+  });
+});
+
 
 
 
