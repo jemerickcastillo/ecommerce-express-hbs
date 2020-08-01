@@ -55,23 +55,28 @@ router.get('/checkout',isLoggedIn, async(req, res,next)=>{
     dataUser: dataUser
   });
 });
-router.get('/add-to-cart/:id',isLoggedIn, async (req, res)=>{
+router.get('/add-to-cart/:id', async (req, res)=>{
   let backURL = req.header('Referer') || '/';
   const idProduct = req.params.id
   const dataLoaded = await Productos.findById(idProduct);
-  console.log(dataLoaded.title);
-
-  const nuevoCarrito = new Carrito;
-  nuevoCarrito.user = req.user
-  nuevoCarrito.title = dataLoaded.title
-  nuevoCarrito.imagePath = dataLoaded.imagePath
-  nuevoCarrito.price = dataLoaded.price
-
-  nuevoCarrito.save((err, result)=>{
-    if(err) console.log(err)
-    res.redirect(backURL);
-  });
+  if(req.user){
+    const nuevoCarrito = new Carrito;
+    nuevoCarrito.user = req.user
+    nuevoCarrito.title = dataLoaded.title
+    nuevoCarrito.imagePath = dataLoaded.imagePath
+    nuevoCarrito.price = dataLoaded.price
+  
+    nuevoCarrito.save((err, result)=>{
+      if(err) console.log(err)
+      res.redirect(backURL);
+    });
+  }else{
+    res.redirect("/user/signin");
+  }
 });
+
+
+
 router.get('/shopping_cart',isLoggedIn, async (req, res)=>{
   const cartList = await cartListAsync({userLogin: req.user}).then((data)=>data)
   const dataLoaded = await Carrito.find({user: req.user});

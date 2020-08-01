@@ -560,7 +560,8 @@ span.cartImage img {
 .stepsWrapper .summery-box {
   border: 3px solid #f0f0f0;
   padding: 40px 25px;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  padding-bottom: 80px; }
 
 .stepsPage form .checkboxArea {
   float: left;
@@ -616,5 +617,21 @@ ul li {
   margin-bottom: 50px;
   background: #f0f0f0;
   padding: 20px 30px; }
+
+.about .icon-box .icon i {
+  color: #fda7c2;
+  font-size: 32px; }
+
+.about .icon-box:hover .icon {
+  background: #fda7c2; }
+
+#footer .footer-top .social-links a:hover {
+  background: transparent;
+  color: #fff;
+  text-decoration: none; }
+
+#hero .btn-get-started:hover {
+  background: #fda7c2;
+  border: none; }
 
 /*# sourceMappingURL=style.css.map */
