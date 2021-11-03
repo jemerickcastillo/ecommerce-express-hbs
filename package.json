@@ -31,7 +31,7 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "paypal-rest-sdk": "^1.8.1",
-    "validator": "^13.1.1"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "handlebars": "^4.5.0"
